@@ -14,13 +14,13 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         customAppBar(),
-        FeaturedBooksListView()
+        FeaturedListViewItem()
         ],
     );
   }
 }
-class FeaturedBooksListView extends StatelessWidget {
-  const  FeaturedBooksListView({super.key});
+class FeaturedListViewItem extends StatelessWidget {
+  const  FeaturedListViewItem ({super.key});
 
   @override
   Widget build(BuildContext context) {
