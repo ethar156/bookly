@@ -4,4 +4,4 @@ const kprimaryColor =  Color(0xff100B20) ;
 
 const kTransition = Duration(milliseconds: 250);
 
-const kGTSectraFine = ' assets/fonts/GT Sectra Fine Regular.ttf';
+const kGTSectraFine = 'GT Sectra Fine';
