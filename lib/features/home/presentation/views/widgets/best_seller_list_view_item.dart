@@ -52,7 +52,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   const Text(
                     'J.K. Rowling',
-                    style: Style.TextStyle14
+                    style: Style.TextStyle14,
                     ),
                      Row(
                       children: [
