@@ -65,7 +65,8 @@ class BestSellerListViewItem extends StatelessWidget {
                         const BookRating()
                       ],
                     )
-                  ],),
+                  ],
+                  ),
              ),
           ],
         ),
