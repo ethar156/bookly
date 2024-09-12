@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +35,17 @@ class BestSellerListViewItem extends StatelessWidget {
             const SizedBox(
               width: 30,
             ),
-             Expanded(
-               child: Column(
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
+                children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width*.5,
-                    child: const Text('Harry Potter and the Goblet of Fire',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: Style.TextStyle20,
+                    width: MediaQuery.of(context).size.width * .5,
+                    child: const Text(
+                      'Harry Potter and the Goblet of Fire',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Style.TextStyle20,
                     ),
                   ),
                   const SizedBox(
@@ -53,25 +54,24 @@ class BestSellerListViewItem extends StatelessWidget {
                   const Text(
                     'J.K. Rowling',
                     style: Style.TextStyle14,
-                    ),
-                     Row(
-                      children: [
-                        Text('19.9 €',
-                        style:Style.TextStyle20.copyWith(
-                          fontWeight: FontWeight.bold
-                        ) ,),
-                        const Spacer(),
-                        
-                        const BookRating()
-                      ],
-                    )
-                  ],
                   ),
-             ),
+                  Row(
+                    children: [
+                      Text(
+                        '19.9 €',
+                        style: Style.TextStyle20.copyWith(
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const Spacer(),
+                      const BookRating()
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

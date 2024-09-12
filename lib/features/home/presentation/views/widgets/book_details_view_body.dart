@@ -18,71 +18,68 @@ class BookDetailsViewBody extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     return CustomScrollView(
-      slivers: [ 
+      slivers: [
         SliverFillRemaining(
-          hasScrollBody: false,
-          child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        children: [
-          const SafeArea(child: CustomBookDetailsAppBar()),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: const CustomBookImage(),
-          ),
-          const SizedBox(
-            height: 43,
-          ),
-          Text('the Jungle Book',
-              style: Style.TextStyle30.copyWith(fontWeight: FontWeight.bold)),
-          const SizedBox(
-            height: 6,
-          ),
-          Opacity(
-            opacity: .7,
-            child: Text('Rudyard Kipling',
-                style: Style.TextStyle18.copyWith(
-                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w500)),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          const BookRating(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 37,
-          ),
-           const BooksAction(),
-            const Expanded(
-              child:  SizedBox(
-                height: 50,
+            hasScrollBody: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                children: [
+                  const SafeArea(child: CustomBookDetailsAppBar()),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * .2),
+                    child: const CustomBookImage(),
+                  ),
+                  const SizedBox(
+                    height: 43,
+                  ),
+                  Text('the Jungle Book',
+                      style: Style.TextStyle30.copyWith(
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Opacity(
+                    opacity: .7,
+                    child: Text('Rudyard Kipling',
+                        style: Style.TextStyle18.copyWith(
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w500)),
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  const BookRating(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+                  const SizedBox(
+                    height: 37,
+                  ),
+                  const BooksAction(),
+                  const Expanded(
+                    child: SizedBox(
+                      height: 50,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'You can also like',
+                      style: Style.TextStyle14.copyWith(
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const similarBooksListView(),
+                  const SizedBox(
+                    height: 40,
+                  )
+                ],
               ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'You can also like',
-                style: Style.TextStyle14.copyWith(
-                  fontWeight: FontWeight.w600
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            const similarBooksListView(),
-            const SizedBox(
-              height: 40,
-            )
-        ],
-      ),
-    )
-        )
+            ))
       ],
     );
-   
   }
 }
-
-
