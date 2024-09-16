@@ -1,7 +1,8 @@
 
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:bookly_app/core/utlis/api_service.dart';
-import 'package:bookly_app/features/home/data/model/bookmodel/bookmodel.dart';
+import 'package:bookly_app/features/home/data/model/bookmodel/book_model.dart';
+
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -11,17 +12,17 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<Bookmodel>>> fetchNewsetBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiService.get(
           endPoint:
               'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
-      List<Bookmodel> books = [];
+      List<BookModel> books = [];
       for (var item in data['items']) {
         try {
-          books.add(Bookmodel.fromJson(item));
+          books.add(BookModel.fromJson(item));
         } catch (e) {
-          books.add(Bookmodel.fromJson(item));
+          books.add(BookModel.fromJson(item));
         }
       }
 
@@ -41,13 +42,13 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<Bookmodel>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
-      List<Bookmodel> books = [];
+      List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(Bookmodel.fromJson(item));
+        books.add(BookModel.fromJson(item));
       }
 
       return right(books);
@@ -66,15 +67,15 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure , List<Bookmodel>>> fetchSimilarBooks(
+  Future<Either<Failure , List<BookModel>>> fetchSimilarBooks(
       {required String category}) async {
     try {
       var data = await apiService.get(
           endPoint:
               'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming');
-      List<Bookmodel> books = [];
+      List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(Bookmodel.fromJson(item));
+        books.add(BookModel.fromJson(item));
       }
 
       return right(books);
